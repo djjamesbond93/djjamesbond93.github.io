@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>HAWK - Fast & Furious</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+		<link href="css/foundation.css" rel="stylesheet" type="text/css"/>
+		<link href="css/main.css" rel="stylesheet" type="text/css"/>
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/vendor/modernizr.js" type="text/javascript"></script>
+		<script src="js/foundation.min.js" type="text/javascript"></script>
+		<script>
+			(function($) {
+				$.fn.drawHexagon = function(edge, color, shadowX, shadowY, shadowBlur, shadowColor) {
+					$(this).each(function() {
+						var draw = this.getContext("2d");
+						pivot = Math.round(edge / 2 * Math.tan(60 * Math.PI / 180));
+						transalte = edge / 20 + 2;
+						this.width = pivot * 2 + edge / 10 + 5;
+						this.height = edge * 2 + edge / 10 + 5;
+						draw.strokeStyle = color;
+						draw.lineWidth = edge / 10 + 1;
+						draw.shadowOffsetX = shadowX;
+						draw.shadowOffsetY = shadowY;
+						draw.shadowBlur = shadowBlur;
+						draw.shadowColor = shadowColor;
+						draw.beginPath();
+						draw.moveTo(transalte + pivot, transalte);
+						draw.lineTo(transalte + pivot * 2, transalte + edge / 2);
+						draw.lineTo(transalte + pivot * 2, transalte + edge * 1.5);
+						draw.lineTo(transalte + pivot, transalte + edge * 2);
+						draw.lineTo(transalte, transalte + edge * 1.5);
+						draw.lineTo(transalte, transalte + edge / 2);
+						draw.closePath();
+						draw.stroke();
+					});
+					return this;
+				};
+			})(jQuery);
+			$(document).ready(function() {
+				$(".hexagon.red").drawHexagon(90, '#a10002');
+				$(".hexagon.white").drawHexagon(90, '#fff', 0, 1, 2, 'rgba(0,0,0,0.7)');
+			});
+		</script>
+  </head>
+  <body>
+		<div class="row">
+			<div id="homeMenu" class="large-push-1 large-5">
+				<div class="row">
+					<div class="push-2 large-4 item rotate">
+						<a href="#">
+							<canvas class="hexagon white opacity"></canvas>
+							<h3 class="menuLabel">LIÊN HỆ</h3>
+						</a>
+					</div>
+					<div class="push-6 large-4 item rotate">
+						<a href="#">
+							<canvas class="hexagon red opacity"></canvas>
+							<h3 class="menuLabel">ĐỐI TÁC</h3>
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="push-0 large-4 item trans">
+						<a href="#">
+							<canvas class="hexagon red opacity"></canvas>
+							<h3 class="menuLabel">DỰ ÁN</h3>
+						</a>
+					</div>
+					<div class="push-4 large-4 item home">
+						<a href="#">
+							<canvas class="hexagon red"></canvas>
+							<h3 class="menuLabel"><img src="images/logo_hawk.png" alt=""/></h3>
+						</a>
+					</div>
+					<div class="push-8 large-4 item trans">
+						<a href="#">
+							<canvas class="hexagon white opacity"></canvas>
+							<h3 class="menuLabel">MẪU WEBSITE</h3>
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="push-2 large-4 item rotate">
+						<a href="#">
+							<canvas class="hexagon white opacity"></canvas>
+							<h3 class="menuLabel">HOSTING</h3>
+						</a>
+					</div>
+					<div class="push-6 large-4 item rotate">
+						<a href="#">
+							<canvas class="hexagon red opacity"></canvas>
+							<h3 class="menuLabel">GIỚI THIỆU</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- div#homeMenu -->
+			<div id="featureSlide" class="large-push-6 large-5">
+				<div data-orbit data-options="timer_speed:5000;animation_speed:300;bullets: false;swipe: flase;slide_number: false">
+					<div class="item" data-orbit-slide="headline-1">
+						<h3 class="featureTitle large-push-1 large-7">RESPONSIVE DESIGN</h3>
+						<div class="content text-justify large-push-1 large-7">
+							Website cung cấp mọi thứ cho công việc phát triển kinh doanh	của bạn. Với thiết kế chuẩn Responsive, tích hợp trên Desktop - Tablet - Moblie. Mang đến cho người dùng những trải niệm thú vị và hiện đại.
+						</div>
+						<div class="thumb">
+							<img src="images/responsive.png" alt=""/>
+						</div>
+					</div>
+					<!-- .item -->
+					<div class="item" data-orbit-slide="headline-2">
+						<h3 class="featureTitle large-push-1 large-7">RESPONSIVE DESIGN</h3>
+						<div class="content text-justify large-push-1 large-7">
+							Website cung cấp mọi thứ cho công việc phát triển kinh doanh	của bạn. Với thiết kế chuẩn Responsive, tích hợp trên Desktop - Tablet - Moblie. Mang đến cho người dùng những trải niệm thú vị và hiện đại.
+						</div>
+						<div class="thumb">
+							<img src="images/responsive.png" alt=""/>
+						</div>
+					</div>
+					<!-- .item -->
+				</div>
+			</div>
+		</div>
+		<div id="corp" class="large-push-6 large-4 text-center">
+			<div class="line"></div>
+			HAWK TEAM
+			<div class="line"></div>
+		</div>
+		<script>
+			$(document).foundation();
+		</script>
+  </body>
+</html>

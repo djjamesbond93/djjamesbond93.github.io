@@ -1,0 +1,159 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-07-2014, 23:53:33
+    Author     : Dj
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic&subset=latin,vietnamese);
+
+body {
+	background: url(../images/background.jpg) no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+body, h1, h2, h3, h4, h5, h6, input {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+canvas {
+	display: block;
+}
+
+/* Transtion */
+#homeMenu .item, #homeMenu .item.home:before, 
+#homeMenu .hexagon  {
+	transition: 0.3s linear;
+}
+/* -- Transition */
+.hexagon.red.opacity {
+	opacity: 0.5;
+}
+.hexagon.white.opacity {
+	opacity: 0.4;
+}
+#homeMenu {
+	padding: 0px 50px;
+	display: block;
+	top: 50%;
+	position: absolute;
+	transform: translateY(-50%) translateX(-10%);
+}
+#homeMenu .row {
+	position: relative;
+}
+#homeMenu .row:after {
+	content: "";
+	padding-top: 29%;
+}
+#homeMenu .row:last-child:after {
+	padding-top: 38%;
+}
+#homeMenu .item {
+	position: absolute;
+	padding: 2px;
+	z-index: 1;
+	border-radius: 20%;
+	overflow: hidden;
+}
+#homeMenu .item a {
+	position: relative;
+	display: block;
+}
+#homeMenu .item .menuLabel {
+	position: absolute;
+	top: 0;
+	font-size: 1.2em;
+	width: 99%;
+	text-align: center;
+	padding: 45% 0;
+	color: rgba(161,0,2,0.8);
+	font-weight: 400;
+}
+#homeMenu .row:first-child .item:first-child .menuLabel,
+#homeMenu .row:last-child .item:last-child .menuLabel {
+	transform: rotate(60deg);
+}
+#homeMenu .row:first-child .item:last-child .menuLabel,
+#homeMenu .row:last-child .item:first-child .menuLabel {
+	transform: rotate(-60deg);
+}
+#homeMenu .item .menuLabel img {
+	width: 70%;
+}
+#homeMenu .hexagon {
+	max-width: 100%;
+}
+#homeMenu .item.rotate:hover {
+	transform: rotate(60deg);
+}
+#homeMenu .item:not(.home):hover .hexagon {
+	opacity: 0.8;
+}
+#homeMenu .row:first-child .item.rotate:first-child:hover,
+#homeMenu .row:last-child .item.rotate:last-child:hover {
+	transform: rotate(-60deg);
+}
+#homeMenu .item.trans:first-child:hover {
+	transform: translateX(-5%);
+}
+#homeMenu .item.trans:last-child:hover {
+	transform: translateX(5%);
+}
+#homeMenu .item.home:hover {
+	transform: scale3d(1.05,1.05,1);
+}
+#homeMenu .item.home:before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(rgba(255,255,255,0.5), rgba(255,255,255, 0), rgba(255,255,255, 0), rgba(255,255,255, 0));
+	border-radius: 100%;
+	transform: scale(0);
+}
+#homeMenu .item.home:hover:before {
+	transform: scale(2);
+}
+#featureSlide {
+	padding-top: 20px;
+	position: absolute;
+}
+#featureSlide .item .featureTitle {
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	font-size: 2em;
+}
+#featureSlide .item .content {
+	background: rgba(255,255,255,0.2);
+	padding: 20px 15px;
+	color: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	margin-bottom: 20px;
+	line-height: 1.4em;
+}
+#corp {
+	position: absolute;
+	bottom: 20px;
+	color: #fff;
+	text-shadow: -1px 1px 0 rgba(0,0,0,0.5);
+	font-size: 1.6em;
+}
+.line {
+	background: linear-gradient(left, transparent,rgba(0,0,0,0.8), transparent);
+	background: -moz-linear-gradient(left, transparent,rgba(0,0,0,0.8), transparent);
+	height: 1px;
+	margin: 15px 0;
+	display: block;
+}
+.line:after {
+	content: "";
+	display: block;
+	height: 1px;
+	top: 1px;
+	position: relative;
+	background: linear-gradient(left, rgba(255,255,255,0),rgba(255,255,255,1), rgba(255,255,255,0));
+	background: -moz-linear-gradient(left, rgba(255,255,255,0),rgba(255,255,255,1), rgba(255,255,255,0));
+}
